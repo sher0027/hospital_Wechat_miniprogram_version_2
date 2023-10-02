@@ -1,0 +1,5 @@
+<!--pages/recordList/recordList.wxml-->
+<view style="background-image: linear-gradient(0deg, #eff7ff 0%,	#eff7ff 100%);display: flex;flex-direction: column;align-items: center;padding: 20rpx 20rpx 30rpx;">
+  <Searchbar width="590"></Searchbar>
+  <RecordList recordList="{{recordList}}" width="696" Deletable="true"></RecordList>
+</view>

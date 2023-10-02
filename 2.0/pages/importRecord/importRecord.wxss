@@ -1,0 +1,34 @@
+/* pages/importRecord/importRecord.wxss */
+page {
+  background: #f7f7f7;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background-color: #3793fd !important;
+	opacity: 0.2;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 0rpx; 
+  height: 0rpx; 
+  text-align: center;
+  font-size: 0rpx;
+}
+
+.btn-import{
+  background-color: #4fadff;
+  border-radius: 43rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  margin-bottom: 54rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Searchbar":"/components/Searchbar/Searchbar",
+    "DoctorList":"/components/DoctorList/DoctorList"
+  },
+  "navigationBarTitleText": "首页",
+  "style": "v2"
+}

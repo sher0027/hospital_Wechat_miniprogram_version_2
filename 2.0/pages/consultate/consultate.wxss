@@ -1,0 +1,58 @@
+/* pages/consulate/consulate.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.record {
+  width: 696rpx;
+  background-image: linear-gradient(0deg, #eff7ff 0%, #eff7ff 100%);
+  border-radius: 29rpx;
+  position: relative;
+  margin: 18rpx 27rpx;
+  padding-bottom: 45rpx;
+  position: relative;
+}
+
+.record .record-head {
+  display: flex;
+  align-items: center;
+  padding-top: 31rpx;
+}
+
+.record .record-head .btn-upload {
+  background-color: transparent;
+  border: solid 2rpx #4fadff;
+  border-radius: 25rpx;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 176rpx;
+}
+
+.record .record-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 38rpx 20rpx 0rpx 24rpx;
+  position: relative;
+}
+
+.record .record-search .menu {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  background-image: linear-gradient(0deg, #eff7ff 0%, #eff7ff 100%);
+  padding: 10rpx 0;
+}
+
+/* .record .btn-recordlist{
+  background-color: #4fadff;
+  border-radius: 33rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  margin-top: 31rpx;
+} */

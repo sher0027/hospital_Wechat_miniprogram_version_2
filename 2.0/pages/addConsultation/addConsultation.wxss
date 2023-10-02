@@ -1,0 +1,45 @@
+/* pages/consult/consult.wxss */
+.consult-title{
+	font-size: 36rpx;
+  font-weight: normal;
+  margin-left: 30rpx;
+}
+
+.consult-content{
+  width: 652rpx;
+	background-color: #fafafa;
+  border-radius: 29rpx;
+  margin: 29rpx 30rpx 43rpx;
+  padding: 33rpx 19rpx 18rpx;
+}
+
+.consult-detail{
+  font-size: 29rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+	color: #bbbbbb;
+}
+
+.consult-content .consult-hint{
+  font-size: 22rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+  color: #8e8e8e;
+  right: 31rpx;
+}
+
+.consult-highlight{
+  font-weight: normal;
+  font-size: 22rpx;
+  color: #ff0000;
+}
+
+.btn-submit{
+  background-color: #4fadff;
+  border-radius: 43rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  margin: 69rpx 100rpx 54rpx;
+}

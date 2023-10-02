@@ -1,0 +1,12 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="order">
+  <scroll-view class="status-scroll" scroll-x="true">
+    <view style="display: flex;justify-content: space-between;">
+      <view wx:for="{{statusList}}" data-index="{{index}}" wx:key="id" class="{{item.checked == true ? 'status-active-tag': 'status-inactive-tag'}}" bindtap="change_status">
+        <text style="margin-bottom: 2rpx;">{{item.name}}</text>
+        <view wx:if="{{item.checked}}" style="width: 22rpx;height: 1rpx;border-bottom: solid 7rpx #4fadff;text-align: center;margin: 0 auto;"></view>
+      </view>
+    </view>
+  </scroll-view>
+  <OrderList orderList="{{orderList}}" sid="{{sid}}"></OrderList>
+</view>

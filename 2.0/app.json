@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/consultate/consultate",
+    "pages/me/me",
+    "pages/doctorTeam/doctorTeam",
+    "pages/addConsultation/addConsultation",
+    "pages/sucConsultation/sucConsultation",
+    "pages/doctorDetail/doctorDetail",
+    "pages/addRecord/addRecord",
+    "pages/sucRecord/sucRecord",
+    "pages/importRecord/importRecord",
+    "pages/recordDetail/recordDetail",
+    "pages/recordList/recordList",
+    "pages/recordRelated/recordRelated",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/caseList/caseList",
+    "pages/caseDetail/caseDetail",
+    "pages/editInfo/editInfo",
+    "pages/doctorMine/doctorMine",
+    "pages/hint/hint",
+    "pages/sysHintDetail/sysHintDetail",
+    "pages/addMessage/addMessage", 
+    "pages/introduction/introduction",
+    "pages/web-view/web-view"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabbar1_unselected.png",
+        "selectedIconPath": "images/tabbar1_selected.png"
+      },
+      {
+        "pagePath": "pages/consultate/consultate",
+        "text": "问诊",
+        "iconPath": "images/tabbar2_unselected.png",
+        "selectedIconPath": "images/tabbar2_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tabbar3_unselected.png",
+        "selectedIconPath": "images/tabbar3_selected.png"
+      }
+    ],
+    "color": "#bbbbbb",
+    "borderStyle": "black",
+    "selectedColor": "#3793fd",
+    "backgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

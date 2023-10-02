@@ -1,0 +1,18 @@
+<!--components/RecordList/RecordList.wxml-->
+<wxs src="../../utils/slice.wxs" module="tools" />
+<view class="record-item" style="width: {{width}}rpx" wx:for="{{recordList}}" data-index="{{index}}" wx:key="id" bindtap="recordDetail">
+  <view class="record-title">
+    <image src="{{item.departmentPhoto}}" style="width: 42rpx;height: 42rpx;margin-right: 18rpx;"></image>
+    <text class="record-content" style="margin-right: 18rpx;">{{item.recordHospital}}</text>
+    <text class="record-content">{{item.departmentName}}</text>
+  </view>
+  <view style="height: 2rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);margin: 0 32rpx;"></view>
+  <view class="record-content" style="margin:22rpx 22rpx 14rpx;">{{item.recordText}}</view>
+  <view style="display: flex;flex-wrap: wrap;margin: 10rpx 0 10rpx 22rpx;border-radius: 25rpx;" >
+    <image wx:for-items="{{item.pictures}}" wx:for-item="Item" class="record-img" src="{{Item}}" catchtap="preview" id="{{item.id}}" data-index="{{index}}" mode="aspectFill" wx:if="{{index<3}}"></image>
+  </view>
+  <view class="record-tail">
+    <text style="font-size: 22rpx;font-weight: normal;color: #bbbbbb;">{{tools.FormatDate(item.recordTime)}}</text>
+    <image wx:if="{{Deletable}}" src="/images/delete_icon.png" style="width: 36rpx;height: 42rpx;" catchtap="recordDelete" id="{{item.id}}"></image>
+  </view>
+</view>

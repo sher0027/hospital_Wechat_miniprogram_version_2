@@ -1,0 +1,47 @@
+/* pages/record/record.wxss */
+
+.record-title{
+	font-size: 36rpx;
+  font-weight: normal;
+  margin-left: 30rpx;
+}
+
+.record-content{
+  width: 640rpx;
+	height: 44rpx;
+	background-color: #fafafa;
+  border-radius: 29rpx;
+  margin: 29rpx 30rpx 43rpx;
+  padding: 25rpx 25rpx;
+}
+
+.record-detail{
+  font-size: 29rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+	color: #bbbbbb;
+}
+
+.record-content .record-hint{
+  font-size: 22rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+  color: #8e8e8e;
+  right: 31rpx;
+}
+
+.record-highlight{
+  font-weight: normal;
+  font-size: 22rpx;
+  color: #ff0000;
+}
+
+.record-btn{
+  background-color: #4fadff;
+  border-radius: 43rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+  margin: 69rpx 100rpx 54rpx;
+}

@@ -1,0 +1,4 @@
+<!--components/Authorization/Authorization.wxml-->
+<view wx:if="{{canIUseGetUserProfile}}" style="background-color: transparent;" bindtap="login" style="display: flex;">
+  <slot></slot>
+</view>

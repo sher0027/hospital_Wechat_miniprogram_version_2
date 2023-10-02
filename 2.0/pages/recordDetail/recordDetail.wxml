@@ -1,0 +1,22 @@
+<!--pages/recordDetail/recordDetail.wxml-->
+<wxs src="../../utils/slice.wxs" module="tools" />
+<view style="display: flex;flex-direction: column;">
+  <text class="record-title">医院-科室</text>
+  <view class="record-content">
+    <text>{{recordDetail.recordHospital}}-{{recordDetail.departmentName}}</text>
+  </view>
+  <text class="record-title">时间</text>
+  <view class="record-content">
+    <text>{{tools.formatDate(recordDetail.recordTime)}}</text>
+  </view>
+  <text class="record-title">门诊结果</text>
+  <view class="record-content">
+    <text style="width: inherit;word-wrap: break-word;word-break: break-all;white-space: pre-line;">{{recordDetail.recordText}}</text>
+    <view style="display: flex;flex-wrap: wrap;margin: 10rpx 0;border-radius: 25rpx;">
+      <image wx:for-items="{{recordDetail.pictures}}" wx:for-item="Item" class="record-img" src="{{Item}}" bindtap="preview" data-index="{{index}}" mode="aspectFill"></image>
+    </view>
+  </view>
+  <!-- <button class="record-btn" style="width: 614rpx;height: 85rpx;" bindtap="editRecord">
+    <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">编辑</text>
+  </button> -->
+</view>

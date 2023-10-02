@@ -1,0 +1,16 @@
+/* pages/introduction/introduction.wxss */
+/* page{
+  background: #f7f7f7;
+} */
+
+.btn-save {
+  margin: 0%;
+  padding: 0%;
+  border-radius: 43rpx;
+  background-color: #4fadff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 125rpx;
+}

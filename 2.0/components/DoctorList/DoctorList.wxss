@@ -1,0 +1,85 @@
+/* components/DoctorCard/DoctorCard.wxss */
+.doctorCard {
+  /* width: 696rpx; */
+	height: 312rpx;
+	background-color: #ffffff;
+	border-radius: 29rpx;
+  position: relative;
+  margin-bottom: 18rpx;
+  box-shadow: 18rpx 11rpx 18rpx 11 rpx	rgba(0, 0, 0, 0.05);
+  /* padding-right: 31rpx; */
+}
+
+.doctor-avatar {
+  width: 87rpx;
+  height: 87rpx;
+  border-radius: 50%;
+  margin: 34rpx 31rpx 35rpx 40rpx;
+}
+
+.info-title {
+  width: 457rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 35rpx;
+  left: 158rpx;
+  white-space: nowrap;
+}
+
+.info-title .doctor-name {
+  font-size: 36rpx;
+  font-weight: normal;
+  position: relative;
+  margin-right: 25rpx;
+}
+
+.info-title .doctor-hospital {
+  font-size: 25rpx;
+  font-weight: normal;
+  color: #8e8e8e;
+  position: relative;
+  margin-right: 11rpx;
+}
+
+.info-title .doctor-tag {
+  width: 53rpx;
+  height: 34rpx;
+  background-color: #a3d4ff;
+  border-radius: 11rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.doctor-expert {
+  padding-right: 28rpx;
+  font-size: 25rpx;
+  font-weight: normal;
+  position: absolute;
+  top: 88rpx;
+  left: 158rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.doctor-skills{
+  font-size: 25rpx;
+  font-weight: normal;
+  color: #333333;
+  position: relative;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding-left: 40rpx;
+}
+

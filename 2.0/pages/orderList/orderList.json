@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "OrderList":"/components/OrderList/OrderList"
+  },
+  "navigationBarTitleText": "订单记录",
+  "style": "v2"
+}

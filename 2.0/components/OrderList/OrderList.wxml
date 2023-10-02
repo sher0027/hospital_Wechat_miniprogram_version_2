@@ -1,0 +1,34 @@
+<!--components/OrderList/OrderList.wxml-->
+<wxs src="../../utils/slice.wxs" module="tools" />
+<view class="order-item" wx:for="{{orderList}}" wx:key="id" bindtap="orderDetail" data-index="{{index}}">
+  <view class="order-title">
+    <image src="{{item.doctorPicture}}" style="border-radius: 50%;width: 42rpx;height: 42rpx;margin-right: 18rpx;"></image>
+    <text class="order-content" style="margin-right: 18rpx;">{{item.doctorName}}</text>
+    <text class="order-content" style="color: #8e8e8e;margin-right: 18rpx;">{{item.doctorDepart}}</text>
+    <text class="order-content" style="color: #8e8e8e;">{{item.doctorHospital}}</text>
+  </view>
+  <view style="width: 634rpx;height: 2rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);margin-left: 29rpx;"></view>
+  <text class="order-content" style="width: 652rpx;padding: 20rpx 22rpx 0;">{{item.orderPatientText}}</text>
+  <view style="display: flex;flex-wrap: wrap;margin: 10rpx 0 10rpx 22rpx;border-radius: 25rpx;" >
+    <image wx:for-items="{{item.pictures}}" wx:for-item="Item" class="order-img" src="{{Item}}" catchtap="preview" id="{{item.oid}}" data-index="{{index}}" mode="aspectFill" wx:if="{{index<3}}"></image>
+  </view>
+  <view class="order-tail">
+    <view style="display: flex;">
+      <text style="font-size: 22rpx;font-weight: normal;color: #bbbbbb;margin-right: 27rpx;">{{tools.FormatDate(item.orderTime)}}</text>
+      <text wx:if="{{item.orderStatus == 2}}" style="font-size: 22rpx;font-weight: normal;color: #4fadff;">待接诊</text>
+      <text wx:if="{{item.orderStatus == 3}}" style="font-size: 22rpx;font-weight: normal;color: #bbbbbb;">已回复</text>
+      <text wx:if="{{item.orderStatus == 4}}" style="font-size: 22rpx;font-weight: normal;color: #bbbbbb;">已取消</text>
+    </view>
+    <view style="display: flex;">
+      <button class="btn" style="width: 123rpx;height: 42rpx;" wx:if="{{item.orderStatus == 2}}" catchtap="orderCancel" id="{{item.oid}}">
+        <text style="font-size: 22rpx;font-weight: normal;color: #4fadff;">取消订单</text>
+      </button>
+      <button class="btn" style="width: 123rpx;height: 42rpx;" wx:if="{{item.orderStatus == 4}}" catchtap="orderDelete" id="{{item.oid}}">
+        <text style="font-size: 22rpx;font-weight: normal;color: #4fadff;">删除订单</text>
+      </button>
+      <button class="btn" style="width: 123rpx;height: 42rpx;background-color: #4fadff;margin-left: 15rpx;" wx:if="{{item.orderStatus == 4}}" catchtap="orderResubmit" id="{{item.oid}}">
+        <text style="font-size: 22rpx;font-weight: normal;color: #ffffff;">重新提交</text>
+      </button>
+    </view>
+  </view>
+</view>

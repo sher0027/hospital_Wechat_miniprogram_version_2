@@ -1,0 +1,26 @@
+/* pages/hint/hint.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.hint-item {
+  width: 634rpx;
+  background-color: #ffffff;
+  border-radius: 44rpx;
+  margin: 18rpx 0rpx;
+  padding: 28rpx 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-style {
+  font-size: 29rpx;
+  font-weight: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

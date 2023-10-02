@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "DoctorList":"/components/DoctorList/DoctorList",
+    "CaseList":"/components/CaseList/CaseList",
+    "Actionsheet":"/components/Actionsheet/Actionsheet",
+    "Authorization":"/components/Authorization/Authorization"
+  },
+  "navigationBarTitleText": "医生团队",
+  "style": "v2"
+}

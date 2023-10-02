@@ -1,0 +1,58 @@
+<!--pages/me/me.wxml-->
+<!-- <view wx:if="{{canIUseGetUserProfile}}" style="height: 100vh;" bindtap="login"> -->
+<Authorization canIUseGetUserProfile="{{canIUseGetUserProfile}}" userInfo="{{userInfo}}">
+  <view class="show">
+    <view style="height: 149rpx;display: flex;align-items: center;justify-content: space-between;padding:0 54rpx 0 45rpx;">
+      <view style="display: flex;align-items: center;">
+        <image wx:if="{{userInfo.picture}}" src="{{userInfo.picture}}" style="width: 80rpx;height: 80rpx;border-radius: 50%;margin-right: 30rpx;"></image>
+        <image wx:else src="/images/me_1.png" style="width: 80rpx;height: 80rpx;border-radius: 50%;margin-right: 30rpx;"></image>
+        <text wx:if="{{userInfo.patientRealname}}" style="font-weight: normal;font-size: 33rpx;">{{userInfo.patientRealname}}</text>
+        <text wx:else style="font-weight: normal;font-size: 33rpx;">未注册</text>
+      </view>
+      <button class="btn-edit" style="width: 128rpx;height: 34rpx;" bindtap="editInfo">
+        <text style="font-weight: normal;color: #8e8e8e;font-size: 25rpx;">修改信息 ></text>
+      </button>
+    </view>
+    <view class="card" style="background-image: url(https://super-doctor-1304015296.cos.ap-nanjing.myqcloud.com/2957274210059157504);background-size: cover;box-shadow: 0rpx 11rpx 18rpx 0rpx	rgba(0, 0, 0, 0.05);margin-bottom: 29rpx;">
+      <view style="display: flex;align-items: center;margin-bottom: 32rpx;justify-content: space-between;margin: 0 31rpx 36rpx 24rpx;">
+        <text style="font-weight: normal;font-size: 29rpx;">我的咨询</text>
+        <button class="btn-all" style="width: 88rpx;height: 34rpx;" bindtap="orderList" data-index="{{-2}}">
+          <text style="font-weight: normal;color: #8e8e8e;font-size: 25rpx;">全部 ></text>
+        </button>
+      </view>
+      <view style="height: 104rpx;display: flex;white-space: nowrap;align-items: center;justify-content: space-between;margin: 0 8rpx 49rpx;">
+        <button wx:for="{{functionList}}" wx:key="id" class="btn-functionList" style="width: 76rpx;height: 104rpx;" bindtap="orderList" data-index="{{index}}">
+          <image src="{{item.img}}" style="width: 56rpx;height: 56rpx;margin-bottom: 16rpx;"></image>
+          <text style="font-weight: normal;font-size: 25rpx;">{{item.name}}</text>
+        </button>
+      </view>
+      <view style="height: 94rpx;display: flex;white-space: nowrap;align-items: center;margin: 0 17rpx;">
+        <button class="btn-me" style="width: 312rpx;height: 94rpx;border-top-left-radius: 29rpx;border-bottom-left-radius: 29rpx;" bindtap="doctorMine">
+          <image src="/images/me_1.png" style="width: 40rpx;height: 40rpx;border-radius: 50%;margin-right: 20rpx;"></image>
+          <text style="font-weight: normal;font-size: 29rpx;">医生团队</text>
+        </button>
+        <view style="width: 1rpx;height: 56rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);"></view>
+        <button class="btn-me" style="width: 312rpx;height: 94rpx;border-top-right-radius: 29rpx;border-bottom-right-radius: 29rpx;">
+          <image src="/images/me_2.png" style="width: 40rpx;height: 40rpx;border-radius: 50%;margin-right: 20rpx;"></image>
+          <text style="font-weight: normal;font-size: 29rpx;" bindtap="recordList">病历记录</text>
+        </button>
+      </view>
+    </view>
+    <view class="card" style="width: 586rpx;padding: 3rpx 36rpx 18rpx;">
+      <view style="background-color: #ffffff;border-radius: 29rpx;">
+        <view wx:for="{{helpList}}" wx-for-index="index" wx:key="id">
+          <view class="btn-help" bindtap="{{item.event}}">
+            <view style="display: flex;align-items: center;">
+              <image class="btn-help-img" src="{{item.img}}"></image>
+              <text class="btn-help-title">{{item.title}}</text>
+            </view>
+            <text class="btn-help-hint">{{item.hint}} ></text>
+          </view>
+          <view wx:if="{{helpList.length-index > 1}}" style="width: 580rpx;height: 1rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);margin: 0 auto;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</Authorization>
+
+<!-- </view> -->

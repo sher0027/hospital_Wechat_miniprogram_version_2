@@ -1,0 +1,22 @@
+<!--pages/hint/hint.wxml-->
+<view style="display: flex;flex-direction: column;align-items: center;">
+  <Searchbar width="590"></Searchbar>
+  <view wx:if="{{SysHint}}" class="hint-item" bindtap="sysHintDetail">
+    <view style="display: flex;">
+      <image src="{{SysHint.sysPicture}}" mode="aspectFill" style="width: 120rpx;height: 120rpx;margin-right: 20rpx;border-radius: 30rpx;flex-shrink: 0;"></image>
+      <view style="display: flex;flex-direction: column;justify-content: space-around;">
+        <text class="text-style">{{SysHint.sysName}}</text>
+        <text class="text-style">{{SysHint.sysInfo}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{DoctorHint}}" data-index="{{index}}" wx:key="id" class="hint-item" bindtap="orderDetail">
+    <view style="display: flex;">
+      <image src="{{item.teamPicture}}" mode="aspectFill" style="width: 120rpx;height: 120rpx;margin-right: 20rpx;border-radius: 30rpx;flex-shrink: 0;"></image>
+      <view style="display: flex;flex-direction: column;justify-content: space-around;">
+        <text class="text-style">{{item.teamName}}</text>
+        <text class="text-style">{{item.orderDoctorText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

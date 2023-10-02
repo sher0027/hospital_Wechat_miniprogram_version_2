@@ -1,0 +1,18 @@
+/* components/Actionsheet/Actionsheet.wxss */
+.actionsheet{
+  width: 100vw;
+  background-color: #ffffff;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0rpx 11rpx 45rpx 0rpx rgba(28, 86, 122, 0.3);
+}
+
+.actionsheet .actionsheet-btn{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1rpx #bbbbbb;
+  padding: 0%;
+}

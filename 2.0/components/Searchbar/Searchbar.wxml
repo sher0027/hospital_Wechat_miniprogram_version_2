@@ -1,0 +1,14 @@
+<!--components/Searchbar/Searchbar.wxml-->
+<view class="searchbar" style="width: {{width}}rpx">
+  <input name="keyWord" placeholder="请输入" placeholder-class="placeholderStyle" style="width: inherit;padding-right: 20rpx;" bindinput="search" />
+  <button class="btn-search" style="width: 38rpx;height: 42rpx;">
+    <image src="/images/search.png" style="width: 38rpx;height: 42rpx;" mode="aspectFit" />
+  </button>
+</view>
+<view style="position: absolute;z-index: 1;margin-top: 10rpx;background-color: #eff7ff;">
+  <!-- <view wx:if="{{teamList.length}}">暂无搜索结果，请尝试更换关键词</view> -->
+  <view wx:for="{{teamList}}" wx-for-index="{{index}}" wx:key="id">
+    <DoctorList doctorList="{{[item.manager]}}" width="670"></DoctorList>
+    <DoctorList doctorList="{{item.staff}}" width="590"></DoctorList>
+  </view>
+</view>

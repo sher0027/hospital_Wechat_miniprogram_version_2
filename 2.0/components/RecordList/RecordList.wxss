@@ -1,0 +1,41 @@
+/* components/RecordList/RecordList.wxss */
+.record-item {
+  background-color: #ffffff;
+  border-radius: 29rpx;
+  margin: 38rpx 0 18rpx;
+}
+
+.record-item .record-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 24rpx 27rpx 22rpx;
+}
+
+.record-item .record-content {
+  font-size: 25rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre;
+}
+
+.record-item .record-img {
+  width: 207rpx;
+  height: 167rpx;
+  flex-shrink: 0;
+  margin: 0 15rpx 22rpx 0;
+  border-radius: 25rpx;
+}
+
+.record-item .record-tail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23rpx 25rpx 14rpx 22rpx;
+}

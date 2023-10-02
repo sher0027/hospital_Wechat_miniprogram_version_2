@@ -1,0 +1,60 @@
+<!--pages/editinfo/editInfo.wxml-->
+<form bindsubmit="editInfo">
+  <view style="display: flex;flex-direction: column;">
+    <view style="display: flex;">
+      <text class="info-title">昵称</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="info-content">
+      <input style="width: inherit;" name="patientNickname" placeholder="请输入您的昵称" value="{{patientNickname}}" placeholder-class="info-detail" maxlength="11" type="text" focus="true">
+      </input>
+    </view>
+    <view style="display: flex;">
+      <text class="info-title">姓名</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="info-content">
+      <input style="width: inherit;" name="patientRealname" placeholder="请输入您的真实姓名" value="{{patientRealname}}" placeholder-class="info-detail" maxlength="11" type="text">
+      </input>
+    </view>
+    <view style="display: flex;">
+      <text class="info-title">性别</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="info-content" d>
+      <text class="info-detail">请选择您的性别</text>
+      <radio-group style="display: flex;width: max-content;" name="patientGender" bindchange="changeGender">
+        <radio value="patientGender" wx:for-items="{{Gender}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}" style="margin-right: 38rpx;">
+          <text class="{{ currentValue == item.value ? 'active' : 'inactive'}}" bindchange="change_gender">{{item.value}}</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view style="display: flex;">
+      <text class="info-title">出生年月</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <picker class="info-content" name="patientBirthday" value="{{patientBirthday}}" mode="date" bindchange="changeBirthday">
+      <text class="info-detail" wx:if="{{patientBirthday==''||patientBirthday== null}}">请选择您的出生日期</text>
+      <text wx:else>{{patientBirthday}}</text>
+    </picker>
+    <view style="display: flex;">
+      <text class="info-title">地区</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <picker class="info-content" name="patientRegion" value="{{patientRegion}}" mode="region" bindchange="changeRegion">
+      <text class="info-detail" wx:if="{{patientRegion==''||patientRegion== null}}">请选择您的地区</text>
+      <text wx:else>{{patientRegion}}</text>
+    </picker>
+    <view style="display: flex;">
+      <text class="info-title">手机号码</text>
+      <text class="info-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="info-content">
+      <input style="width: inherit;" name="patientPhone" placeholder="请输入您的手机号码" value="{{patientPhone}}" placeholder-class="info-detail" maxlength="11" type="digit">
+      </input>
+    </view>
+    <button class="btn-submit" style="width: 614rpx;height: 85rpx;" form-type="submit">
+      <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">确认</text>
+    </button>
+  </view>
+</form>

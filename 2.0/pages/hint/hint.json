@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Searchbar": "/components/Searchbar/Searchbar"
+  },
+  "navigationBarTitleText": "消息通知",
+  "style": "v2"
+}

@@ -1,0 +1,4 @@
+<!--pages/recordRelated/recordRelated.wxml-->
+<view style="display: flex;flex-direction: column;align-items: center;padding: 20rpx 20rpx 30rpx;">
+  <RecordList recordList="{{recordList}}" width="696"></RecordList>
+</view>

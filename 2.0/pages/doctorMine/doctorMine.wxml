@@ -1,0 +1,28 @@
+<!--pages/doctorMine/doctorMine.wxml-->
+<view wx:for="{{doctorMine}}" data-index="{{index}}" wx:key="id" class="mine-item" bindtap="doctorTeam" id="0">
+  <view style="display: flex;">
+    <image src="{{item.departmentPhoto}}" mode="aspectFill" style="width: 120rpx;height: 120rpx;margin-right: 20rpx;border-radius: 30rpx;flex-shrink: 0;"></image>
+    <view style="display: flex;flex-direction: column;justify-content: space-around;">
+      <text class="text-style">{{item.teamManager}}</text>
+      <text class="text-style">{{item.department}}私人医生</text>
+    </view>
+  </view>
+  <button class="btn-followCancel" style="width: 200rpx;height: 67rpx;background-color: #eff7ff;" catchtap="followCancel" id="{{item.tid}}">
+    <text style="font-size: 29rpx;color: #4fadff;">取消关注</text>
+  </button>
+</view>
+<view style="padding: 25rpx;">
+  <text style="font-size: 40rpx;font-weight: bold;">您的关注历史</text>
+</view>
+<view wx:for="{{doctorHistory}}" data-index="{{index}}" wx:key="id" class="mine-item" bindtap="doctorTeam" id="1">
+  <view style="display: flex;">
+    <image src="{{item.departmentPhoto}}" mode="aspectFill" style="width: 120rpx;height: 120rpx;margin-right: 20rpx;border-radius: 30rpx;flex-shrink: 0;"></image>
+    <view style="display: flex;flex-direction: column;justify-content: space-around;">
+      <text class="text-style">{{item.teamManager}}</text>
+      <text class="text-style">{{item.department}}私人医生</text>
+    </view>
+  </view>
+  <button class="btn-followCancel" style="width: 200rpx;height: 67rpx;" catchtap="followResubmit" id="{{item.tid}}">
+    <text style="font-size: 29rpx;color: #ffffff;">重新关注</text>
+  </button>
+</view>

@@ -1,0 +1,22 @@
+<!--components/DoctorCard/DoctorCard.wxml-->
+<view style="width: {{width}}rpx" wx:for="{{doctorList}}" data-index="{{index}}" class="doctorCard" wx:key="id" bindtap="doctorDetail">
+  <image src="{{item.doctorImage}}" class="doctor-avatar" style="margin: 40rpx 40rpx 29rpx 24rpx;"></image>
+  <view class="info-title">
+    <text class="doctor-name">{{item.doctorName}}</text>
+    <text class="doctor-hospital">{{item.doctorHospital}}</text>
+    <view class="doctor-tag">
+      <text style="font-size: 22rpx;font-weight: normal;color: #ffffff;">{{item.hospitalLevel}}</text>
+    </view>
+  </view>
+  <text class="doctor-expert">{{item.doctorIntroduction}}</text>
+  <view style="display: flex;padding:0 22rpx 13rpx;align-items: center;">
+    <text style="font-size: 25rpx;font-weight: normal;color: #4fadff;position: relative;white-space: nowrap;">擅长疾病
+    </text>
+    <text class="doctor-skills" style="-webkit-line-clamp: 1;">{{item.doctorSkilledIllness}}</text>
+  </view>
+  <view style="display: flex;padding:0 22rpx 13rpx;align-items: center;align-items: flex-start;">
+    <text style="font-size: 25rpx;font-weight: normal;color: #4fadff;position: relative;white-space: nowrap;">擅长技术
+    </text>
+    <text class="doctor-skills">{{item.doctorSkilledTechnology}}</text>
+  </view>
+</view>

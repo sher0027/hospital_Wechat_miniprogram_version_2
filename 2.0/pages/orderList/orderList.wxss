@@ -1,0 +1,47 @@
+/* pages/orderList/orderList.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.order{
+  width: 696rpx;
+	background-color: #eff7ff;
+  border-radius: 29rpx;
+  position: relative;
+  margin: 18rpx 27rpx;
+}
+
+.order .status-scroll {
+  width: 652rpx;
+  height: 60rpx;
+  position: relative;
+  padding: 27rpx 22rpx 38rpx;
+  white-space: nowrap;
+}
+
+
+.order .status-scroll .status-active-tag {
+	height: 49rpx;
+	font-size: 36rpx;
+	font-weight: normal;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  text-align: center;
+}
+
+.order .status-scroll .status-inactive-tag {
+	height: 49rpx;
+	font-size: 27rpx;
+	font-weight: normal;
+  color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  padding-top: 10rpx;
+}

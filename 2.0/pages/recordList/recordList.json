@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Searchbar":"/components/Searchbar/Searchbar",
+    "RecordList":"/components/RecordList/RecordList"
+  },
+  "navigationBarTitleText": "病历记录",
+  "style": "v2"
+}

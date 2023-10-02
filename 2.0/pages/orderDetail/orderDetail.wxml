@@ -1,0 +1,21 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view style="display: flex;flex-direction: column;">
+  <text class="order-title">患者</text>
+  <view class="order-content">
+    <text style="width: inherit;word-wrap: break-word;word-break: break-all;white-space: pre-line;">{{orderDetail.orderPatientText}}</text>
+    <view style="display: flex;flex-wrap: wrap;margin: 10rpx 0;border-radius: 25rpx;">
+      <image wx:for-items="{{orderDetail.orderPics}}" wx:for-item="Item" class="order-img" src="{{Item}}" bindtap="preview" data-index="{{index}}" mode="aspectFill"></image>
+    </view>
+  </view>
+  <button class="btn-records" style="width: 614rpx;height: 85rpx;" bindtap="recordRelated">
+    <text style="font-size: 36rpx;font-weight: normal;color: #4fadff;">关联的门诊记录（{{recordList.length}}）</text>
+  </button>
+  <text class="order-title">医生</text>
+  <view class="order-content">
+    <text wx:if="{{orderDetail.orderDoctorText}}">{{orderDetail.orderDoctorText}}</text>
+    <text wx:else>暂未接诊</text>
+  </view>
+  <!-- <button class="order-btn" style="width: 614rpx;height: 85rpx;" bindtap="editorder">
+    <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">编辑</text>
+  </button> -->
+</view>

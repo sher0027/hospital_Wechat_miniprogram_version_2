@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Authorization":"/components/Authorization/Authorization"
+  },
+  "navigationBarTitleText": "我的",
+  "style": "v2"
+}

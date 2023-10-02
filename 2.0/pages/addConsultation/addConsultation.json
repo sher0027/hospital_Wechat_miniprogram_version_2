@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "RecordList":"/components/RecordList/RecordList",
+    "Authorization":"/components/Authorization/Authorization"
+  },
+  "navigationBarTitleText": "在线咨询",
+  "style": "v2"
+}

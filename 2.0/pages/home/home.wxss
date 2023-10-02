@@ -1,0 +1,207 @@
+/* pages/home/home.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  margin: 20rpx 0 27rpx;
+}
+
+.card {
+  width: 696rpx;
+  border-radius: 29rpx;
+  margin: 0 27rpx;
+}
+
+.card .card-scroll {
+  width: 674rpx;
+  height: 228rpx;
+  margin: 31rpx 15rpx 24rpx;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.card .card-scroll .departmentList-active-tag {
+  width: 116rpx;
+  height: 189rpx;
+  margin-right: 21rpx;
+  background-color: #eff7ff;
+  border-radius: 22rpx;
+  padding: 23rpx 0 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.card .card-scroll .departmentList-inactive-tag {
+  width: 116rpx;
+  height: 189rpx;
+  margin-right: 21rpx;
+  background-color: #ffffff;
+  border-radius: 22rpx;
+  padding: 23rpx 0 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.card .scroll-bar {
+  background-color: #eff7ff;
+  width: 62rpx;
+  height: 6rpx;
+  margin: 0 auto;
+  position: relative;
+  top: 0%;
+  overflow: hidden;
+}
+
+.card .scroll-bar .scroll-bar-slide {
+  background-color: #4fadff;
+  height: inherit;
+}
+
+.card .list {
+  width: 645rpx;
+  background-color: #ffffff;
+  box-shadow: 0rpx 11rpx 18rpx 0rpx rgba(0, 0, 0, 0.05);
+  border-radius: 29rpx;
+  margin: 29rpx 25rpx 54rpx;
+  padding-bottom: 27rpx;
+}
+
+.card .list .list-item {
+  width: 614rpx;
+  height: 160rpx;
+  position: relative;
+  padding-right: 31rpx;
+}
+
+.doctor-avatar {
+  width: 87rpx;
+  height: 87rpx;
+  border-radius: 50%;
+  margin: 34rpx 31rpx 35rpx 40rpx;
+  flex-shrink: 0;
+}
+
+.info-title {
+  width: 457rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 35rpx;
+  left: 158rpx;
+  white-space: nowrap;
+}
+
+.info-title .doctor-name {
+  font-size: 36rpx;
+  font-weight: normal;
+  margin-right: 25rpx;
+}
+
+.info-title .doctor-hospital {
+  font-size: 25rpx;
+  font-weight: normal;
+  color: #8e8e8e;
+  margin-right: 11rpx;
+}
+
+.info-title .doctor-tag {
+  width: 53rpx;
+  height: 34rpx;
+  background-color: #a3d4ff;
+  border-radius: 11rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-expert {
+  padding-right: 28rpx;
+  font-size: 25rpx;
+  font-weight: normal;
+  position: absolute;
+  top: 88rpx;
+  left: 158rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.card .list .btn-consulate {
+  background-color: #4fadff;
+  border-radius: 33rpx;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.card .department-scroll {
+  width: 586rpx;
+  height: 60rpx;
+  white-space: nowrap;
+  margin: 27rpx 27rpx 0rpx;
+}
+
+.card .department-scroll .department-active-tag {
+  height: 49rpx;
+  font-size: 36rpx;
+  font-weight: normal;
+  color: #333333;
+  margin-right: 58rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .department-scroll .department-inactive-tag {
+  height: 39rpx;
+  font-size: 27rpx;
+  font-weight: normal;
+  color: #bbbbbb;
+  margin-right: 58rpx;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .subdepartment-active-tag {
+  width: inherit;
+  height: 36rpx;
+  font-size: 27rpx;
+  font-weight: normal;
+  color: #333333;
+  display: inline-block;
+  position: relative;
+  margin-right: 58rpx;
+  text-align: center;
+}
+
+.card .subdepartment-inactive-tag {
+  width: inherit;
+  height: 36rpx;
+  font-size: 27rpx;
+  font-weight: normal;
+  color: #bbbbbb;
+  display: inline-block;
+  position: relative;
+  margin-right: 58rpx;
+}

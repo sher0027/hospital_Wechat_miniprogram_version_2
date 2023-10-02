@@ -1,0 +1,29 @@
+/* components/CaseList/CaseList.wxss */
+.case-item {
+  background-image: linear-gradient(270deg, #f7f7f7 0%, #ffffff 100%);
+  border-radius: 14rpx;
+  margin: 28rpx 22rpx;
+  padding: 28rpx 15rpx 28rpx 5rpx;
+}
+
+.case-item .case-icon {
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 16rpx;
+  margin: 0 18rpx 0 7rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.text-style {
+  font-size: 29rpx;
+  font-weight: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

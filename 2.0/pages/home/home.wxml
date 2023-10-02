@@ -1,0 +1,76 @@
+<!--pages/home/home.wxml-->
+<image src="/images/bg.png" style="width: 750rpx;height: 737rpx;position: absolute;top: -100rpx;z-index: -1;" mode="aspectFit" />
+<view class="head">
+  <Searchbar width="510"></Searchbar>
+  <image wx:if="{{HintNew}}" src="/images/home_hint_active.png" mode="aspectFit" style="width: 53rpx;height: 53rpx;margin-left: 40rpx;" bindtap="hint"></image>
+  <image wx:else src="/images/home_hint_inactive.png" mode="aspectFit" style="width: 53rpx;height: 53rpx;margin-left: 40rpx;" bindtap="hint"></image>
+</view>
+<view class="card" style="background-color: #ffffff;height: 360rpx;margin-bottom: 71rpx;padding-top: 11rpx;">
+  <text style="margin-left: 29rpx;font-size: 40rpx;font-weight: bold;">您的私人医生团队</text>
+  <!-- scroll-view不适合flex布局 -->
+  <scroll-view class="card-scroll" scroll-x="true" bindscroll="slideScroll">
+    <view style="display: flex;">
+      <view wx:for="{{followList}}" data-index="{{index}}" wx:key="id" class="{{item.checked == true ? 'departmentList-active-tag': 'departmentList-inactive-tag'}}" bindtap="change_department">
+        <image src="{{item.departmentPhoto}}" mode="aspectFill" style="width: 90rpx;height: 90rpx" />
+        <text style="font-size: 27rpx;margin-top: 27rpx;">{{item.department}}</text>
+        <text style="font-size: 22rpx;color: #8e8e8e;margin-top: 11rpx;">{{item.teamManager}}团队</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="scroll-bar">
+    <view class="scroll-bar-slide" style="width: {{scrollW}}rpx;"></view>
+  </view>
+</view>
+
+<view class="card" style="background-color: #eff7ff;padding-top: 38rpx;border-radius: 29rpx 29rpx 0rpx 0rpx;box-shadow: 0rpx 11rpx 18rpx 0rpx	rgba(0, 0, 0, 0.05);">
+  <text style="margin-left: 29rpx;font-size: 40rpx;font-weight: bold;">{{doctorTeam[0].doctorName}}医生团队</text>
+  <view class="list">
+    <swiper bindchange='pagechange' current='{{currentIndex}}' style="height: {{160*doctorTeam.length}}rpx;" bindtap="doctorTeam">
+      <swiper-item>
+        <view wx:for="{{doctorTeam}}" wx:for-item="item" wx:key="id" class="list-item">
+          <image src="{{item.doctorImage}}" class="doctor-avatar"></image>
+          <view class="info-title">
+            <text class="doctor-name">{{item.doctorName}}</text>
+            <text class="doctor-hospital">{{item.doctorHospital}}</text>
+            <view class="doctor-tag">
+              <text style="font-size: 22rpx;font-weight: normal;color: #ffffff;">三甲</text>
+            </view>
+          </view>
+          <text class="doctor-expert">{{item.doctorTitle}}</text>
+          <view wx:if="{{doctorTeam.length - index > 1}}" style="width: 580rpx;height: 1rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);margin-left: 31rpx;"></view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <button class="btn-consulate" style="width: 306rpx;height: 63rpx;" bindtap="addConsultation">
+      <text style="font-size: 33rpx;color: #ffffff;">立即咨询</text>
+    </button>
+  </view>
+  <text style="margin-left: 29rpx;font-size: 40rpx;font-weight: bold;">推荐医生</text>
+  <view style="display: flex;">
+    <view>
+      <scroll-view class="department-scroll" scroll-x="true">
+        <view style="display: flex;">
+          <view value="department" wx:for="{{departmentList}}" data-index="{{index}}" wx:key="id" class="{{item.checked == true ? 'department-active-tag': 'department-inactive-tag'}}" bindtap="change_subdepartment">
+            <text style="margin-bottom: 2rpx;">{{item.departname}}</text>
+            <view wx:if="{{item.checked}}" style="width: 22rpx;height: 1rpx;border-bottom: solid 7rpx #4fadff;"></view>
+          </view>
+        </view>
+      </scroll-view>
+      <view wx:if="{{isCollapse}}" style="width: 586rpx;height: 0rpx;border-bottom: solid 1rpx rgba(79, 173, 255, 0.3);margin-left: 27rpx;"></view>
+      <scroll-view class="department-scroll" style="height: 36rpx;margin-top: 0rpx;" wx:if="{{isCollapse}}" scroll-x="true" bindtap="change_subdepartment">
+      <view style="display: flex;align-items: center;"> 
+        <view value="department" wx:for="{{subdepartmentList}}" data-index="{{index}}" class="{{item.checked == true ? 'subdepartment-active-tag': 'subdepartment-inactive-tag'}}" bindtap="change_subdepartment">
+          <text style="margin-bottom: 2rpx;">{{item.index}}</text>
+        </view>
+      </view>
+      </scroll-view>
+    </view>
+    <!-- <image src="/images/collapse_icon.png" style="width: 29rpx;height: 29rpx;margin-top: 42rpx;" bindtap="collapse"></image> -->
+    <image src="/images/collapse_icon.png" style="width: 29rpx;height: 29rpx;margin-top: 42rpx;"></image>
+  </view>
+  <swiper bindchange='pagechange' current='{{currentIndex}}' style="height: {{330*doctorList.length}}rpx;margin-top: 35rpx;">
+    <swiper-item>
+      <DoctorList doctorList="{{doctorList}}"></DoctorList>
+    </swiper-item>
+  </swiper>
+</view>

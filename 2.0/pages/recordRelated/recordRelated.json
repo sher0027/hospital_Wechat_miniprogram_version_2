@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "RecordList":"/components/RecordList/RecordList"
+  },
+  "navigationBarTitleText": "关联病历",
+  "style": "v2"
+}

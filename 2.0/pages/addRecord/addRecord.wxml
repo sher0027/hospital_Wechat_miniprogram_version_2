@@ -1,0 +1,74 @@
+<!--pages/record/record.wxml-->
+<form bindsubmit="addRecord">
+  <view style="display: flex;flex-direction: column;">
+    <view style="display: flex;">
+      <text class="record-title">医院</text>
+      <text class="record-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="record-content">
+      <input style="width: inherit;" name="recordHospital" placeholder="请输入就诊医院名称" value="{{recordHospital}}" placeholder-class="record-detail" maxlength="30" focus="true">
+      </input>
+    </view>
+    <view style="display: flex;">
+      <text class="record-title">科室</text>
+      <text class="record-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <picker class="record-content" name="recordDepartment" bindchange="changeDepartment" range="{{departmentList}}" range-key="{{'departname'}}">
+      <text class="record-detail" wx:if="{{recordDepartment==''||recordDepartment== null}}">请选择就诊科室名称</text>
+      <text wx:else>{{recordDepartment}}</text>
+    </picker>
+    <view style="display: flex;">
+      <text class="record-title">时间</text>
+      <text class="record-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <!-- <view style="display: flex;align-items: center;">
+      <picker class="record-content" style="width: 113rpx;height: 44rpx;margin: 29rpx 0rpx 29rpx 30rpx;" mode="date" fields="year" name="recordYear" bindchange="changeYear">
+        <text class="record-detail" wx:if="{{recordYear==''||recordYear== null}}">请选择</text>
+        <text wx:else>{{recordYear}}</text>
+      </picker>
+      <text>年</text>
+      <picker class="record-content" style="width: 113rpx;height: 44rpx;margin: 29rpx 20rpx 29rpx 30rpx;" range="{{monthList}}" name="recordMonth" bindchange="changeMonth">
+        <text class="record-detail" wx:if="{{recordMonth==''||recordMonth== null}}">请选择</text>
+        <text wx:else>{{recordMonth}}</text>
+      </picker>
+      <text>月</text>
+      <picker class="record-content" style="width: 113rpx;height: 44rpx;margin: 29rpx 20rpx 29rpx 30rpx;" range="{{dayList}}" name="recordDay" bindchange="changeDay" disabled="{{!dayList}}">
+        <text class="record-detail" wx:if="{{recordDay==''||recordDay== null}}" bindtap="getDay">请选择</text>
+        <text wx:else>{{recordDay}}</text>
+      </picker>
+      <text>日</text>
+    </view> -->
+    <view class="record-content" bindtap="onDisplay">
+      <text class="record-detail" wx:if="{{recordTime==''||recordTime== null}}">请选择就诊时间</text>
+      <text wx:else>{{recordTime}}</text>
+    </view>
+    <van-calendar show="{{show}}" title="选择就诊时间" color="#3793fd" min-date="{{minDate}}" max-date="{{maxDate}}" bind:close="onClose" bind:confirm="onConfirm" />
+    <view style="display: flex;">
+      <text class="record-title">门诊结果</text>
+      <text class="record-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="record-content" style="height: 292rpx;align-items: flex-start;">
+      <textarea style="width: inherit;" name="recordText" placeholder="请详细输入您的门诊结果" value="{{recordText}}" placeholder-class="record-detail" bindinput="texts" maxlength="200" disable-default-padding="true">
+      </textarea>
+    </view>
+    <view style="display: flex;">
+      <text class="record-title">上传图片</text>
+      <text class="record-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view style="display: flex;height: 167rpx;margin: 30rpx 0;align-items: center;">
+      <view class="record-content" style="width: 170rpx;height: 160rpx;padding: 0%;margin: 0rpx 30rpx;display: flex;flex-direction: column;align-items: center;flex-shrink: 0;" bindtap="upload">
+        <image src="/images/pic.png" style="width: 65rpx;height: 62rpx;margin: 36rpx 0 2rpx;"></image>
+        <text class="record-detail" style="font-size: 22rpx;">+添加图片</text>
+      </view>
+      <text class="record-detail">上传检查报告、患处照片、胶片等资料，内容仅医生可见。</text>
+    </view>
+    <view wx:for="{{ImgList}}" style="display: flex;justify-content: center;margin: 20rpx 0;" wx:key="*this">
+      <image src="{{item}}" style="width: 690rpx;border-radius: 29rpx;" data-index="{{index}}" bindtap="ImageDelete" mode="widthFix"></image>
+    </view>
+    <Authorization canIUseGetUserProfile="{{canIUseGetUserProfile}}" userInfo="{{userInfo}}">
+      <button class="record-btn" style="width: 614rpx;height: 85rpx;" form-type="submit">
+        <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">上传</text>
+      </button>
+    </Authorization>
+  </view>
+</form>

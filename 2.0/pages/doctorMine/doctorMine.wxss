@@ -1,0 +1,36 @@
+/* pages/doctorMine/doctorMine.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.mine-item {
+  background-color: #ffffff;
+  border-radius: 44rpx;
+  margin: 28rpx 22rpx;
+  padding: 28rpx 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-style {
+  font-size: 29rpx;
+  font-weight: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.mine-item .btn-followCancel{
+  border-radius: 34rpx;
+  background-color: #4fadff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  padding: 0%;
+}
+

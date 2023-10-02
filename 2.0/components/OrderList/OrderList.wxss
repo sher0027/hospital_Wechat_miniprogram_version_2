@@ -1,0 +1,75 @@
+/* components/OrderList/OrderList.wxss */
+.order-item{
+  width: 696rpx;
+	background-color: #ffffff;
+  border-radius: 29rpx;
+  margin-bottom: 18rpx;
+  padding-bottom: 30rpx;
+}
+
+
+.order-item .order-title {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0 22rpx 27rpx;
+}
+
+.order-item .order-content {
+  font-size: 25rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre;
+}
+
+
+.order-item .order-img {
+  width: 207rpx;
+  height: 167rpx;
+  flex-shrink: 0;
+  margin: 0 15rpx 22rpx 0;
+  border-radius: 25rpx;
+}
+
+.order-item .order-tail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 36rpx 0rpx 22rpx;
+}
+
+.order-item .order-tail .btn {
+  background-color: #eff7ff;
+	border-radius: 31rpx;
+  padding: 0%;
+  margin: 0%;
+  /* margin-right: 11rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  display: flex;
+}
+
+button::after {
+  border: none;
+}
+
+/* .order-item .order-tail .btn-pay {
+  background-color: #4fadff;
+	border-radius: 31rpx;
+  padding: 0%;
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+

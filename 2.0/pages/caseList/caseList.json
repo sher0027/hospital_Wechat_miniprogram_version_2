@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Searchbar":"/components/Searchbar/Searchbar",
+    "CaseList":"/components/CaseList/CaseList"
+  },
+  "navigationBarTitleText": "咨询案例",
+  "style": "v2"
+}

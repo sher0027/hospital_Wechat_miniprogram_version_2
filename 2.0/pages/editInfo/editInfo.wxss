@@ -1,0 +1,92 @@
+/* pages/editInfo/editInfo.wxss */
+.info-title{
+	font-size: 36rpx;
+  font-weight: normal;
+  margin-left: 30rpx;
+}
+
+.info-content{
+  width: 652rpx;
+	background-color: #fafafa;
+  border-radius: 29rpx;
+  margin: 29rpx 30rpx 43rpx;
+  padding: 33rpx 19rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-detail{
+  font-size: 29rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+	color: #bbbbbb;
+}
+
+.info-content .info-hint{
+  font-size: 22rpx;
+  font-weight: normal;
+  line-height: 43rpx;
+  color: #8e8e8e;
+  right: 31rpx;
+}
+
+.info-highlight{
+  font-weight: normal;
+  font-size: 22rpx;
+  color: #ff0000;
+}
+
+/* radio未选中时样式 */ 
+radio .wx-radio-input{ 
+  width: 94rpx;
+  height: 47rpx;
+  margin: 0%;
+	background-color: #f7f7f7;
+  border-radius: 13rpx;
+ }
+/* 选中后的 背景样式 （可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+  background-color: #3793fd !important;
+  opacity: 0.2;
+}
+/* 选中后的 对勾样式 （可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+  width: 0rpx; 
+  height: 0rpx; 
+  text-align: center;
+  font-size: 0rpx; 
+}
+
+.active{
+  position: relative;
+  left: -59rpx;
+  font-family: Alibaba PuHuiTi;
+	font-size: 25rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 33rpx;
+	letter-spacing: 0rpx;
+	color: #3793fd;
+}
+
+.inactive{
+  position: relative;
+  left: -59rpx;
+  font-family: Alibaba PuHuiTi;
+	font-size: 25rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 33rpx;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+
+.btn-submit{
+  background-color: #4fadff;
+  border-radius: 43rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  margin: 69rpx 100rpx 54rpx;
+}

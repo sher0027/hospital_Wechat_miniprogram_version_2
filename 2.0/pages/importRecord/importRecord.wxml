@@ -1,0 +1,21 @@
+<!--pages/importRecord/importRecord.wxml-->
+<view style="display: flex;flex-direction: column;">
+  <view style="text-align: center;margin: 20rpx 0;">
+    <text style="font-size: 36rpx;font-weight: bold;">导入医院门诊记录</text>
+  </view>
+  <view style="padding: 0 10rpx 40rpx;display: flex;">
+    <checkbox-group bindchange="ChooseRecord">
+      <label wx:for="{{recordList}}" wx:key="id">
+        <view style="display: flex;align-items: center;">
+          <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+          <view style="width: 640rpx;margin-left: 5rpx;">
+            <RecordList recordList="{{[item]}}" width="680"></RecordList>
+          </view>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+  <button class="btn-import" style="width: 614rpx;height: 85rpx;" bindtap="importRecord">
+    <text style="font-size: 33rpx;font-weight: normal;color: #ffffff;">导入</text>
+  </button>
+</view>

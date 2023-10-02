@@ -1,0 +1,13 @@
+<!--components/Actionsheet/Actionsheet.wxml-->
+<view class="actionsheet" wx:if="{{!isCollapse}}">
+  <view wx:for="{{actionList}}" data-index="{{index}}" bindtap="share" wx:key="id">
+    <button class="actionsheet-btn" style="width: 100vw;height: 90rpx;border: 0%;" wx:if="{{index}}">
+      <text style="font-weight: normal;">{{item}}</text>
+    </button>
+    <button class="actionsheet-btn" style="width: 100vw;height: 90rpx;border: 0%;" open-type="share" wx:else>
+      <text style="font-weight: normal;">{{item}}</text>
+    </button>
+  </view>
+  <view class="actionsheet-btn" style="width: 100vw;height: 90rpx;" bindtap="collapse">取 消</view>
+</view>
+<!-- <image wx:if="{{!isCollapse}}" src="{{shareURL}}" style="height: 500rpx;width: 500rpx;position: fixed;left: 125rpx;bottom: 30vh;" show-menu-by-longpress></image> -->

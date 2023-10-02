@@ -1,0 +1,40 @@
+<!--pages/addMessage/addMessage.wxml-->
+<form bindsubmit="addMessage">
+  <view style="display: flex;flex-direction: column;">
+    <view style="display: flex;">
+      <text class="message-title">描述问题</text>
+      <text class="message-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="message-content" style="height: 209rpx;">
+      <textarea style="width: inherit;" name="messageDesc" placeholder="请详细描述您的问题" value="{{messageDesc}}" placeholder-class="message-detail" bindinput="texts" maxlength="200" auto-focus="true" disable-default-padding="true">
+    </textarea>
+    </view>
+    <view style="display: flex;">
+      <text class="message-title">联系方式</text>
+      <text class="message-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="message-content" style="padding: 33rpx 19rpx;">
+      <input style="width: inherit;" name="phoneNum" placeholder="请输入您的电话号码" value="{{phoneNum}}" placeholder-class="message-detail" maxlength="11" type="digit">
+      </input>
+    </view>
+    <view style="display: flex;">
+      <text class="message-title">上传图片</text>
+      <text class="message-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view style="display: flex;height: 167rpx;margin: 30rpx 0;align-items: center;">
+      <view class="message-content" style="width: 170rpx;height: 160rpx;padding: 0%;margin: 0rpx 30rpx;display: flex;flex-direction: column;align-items: center;flex-shrink: 0;" bindtap="upload">
+        <image src="/images/pic.png" style="width: 65rpx;height: 62rpx;margin: 36rpx 0 2rpx;" mode="widthFix"></image>
+        <text class="message-detail" style="font-size: 22rpx;">+添加图片</text>
+      </view>
+      <text class="message-detail">可上传相关截图</text>
+    </view>
+    <view wx:for="{{ImgList}}" style="display: flex;justify-content: center;margin: 20rpx 0;">
+      <image src="{{item}}" style="width: 690rpx;border-radius: 29rpx;" data-index="{{index}}" bindtap="ImageDelete"></image>
+    </view>
+    <Authorization canIUseGetUserProfile="{{canIUseGetUserProfile}}" userInfo="{{userInfo}}">
+      <button class="btn-submit" style="width: 614rpx;height: 85rpx;" form-type="submit">
+        <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">上传</text>
+      </button>
+    </Authorization>
+  </view>
+</form>

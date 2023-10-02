@@ -1,0 +1,86 @@
+<!--pages/doctorTeam/doctorTeam.wxml-->
+<wxs src="../../utils/slice.wxs" module="tools" />
+<swiper class="swiper" indicator-dots="true" indicator-color="rgba(0, 0, 0, .15)" indicator-active-color="#ffffff" autoplay="true" interval="2000" circular="true">
+  <swiper-item wx:for="{{swiperList}}" wx:key="index" bindtap="webview">
+    <image src="{{item}}" mode="aspectFill" style="width: 100%;height: 100%;border-radius: 33rpx;" />
+  </swiper-item>
+</swiper>
+<view class="card">
+  <view style="display: flex;">
+    <view wx:for="{{flowList}}" wx:key="id" style="width: 178rpx;display: flex;margin-bottom: 34rpx;">
+      <view style="text-align: center;margin: 0 auto;">
+        <view style="font-size: 33rpx;font-weight: bolder;margin-bottom: 16rpx;">{{item.name}}</view>
+        <text wx:if="{{item.name == '回复率'}}" style="font-size: 35rpx;font-weight: normal;color: #f64843;">{{tools.ToFix(item.value)}}%</text>
+        <text wx:else style="font-size: 35rpx;font-weight: normal;color: #4fadff;">{{item.value}}</text>
+      </view>
+      <view wx:if="{{flowList.length-1>item.index}}" style="width: 0rpx;height: 56rpx;border: solid 1rpx rgba(79, 173, 255, 0.3);margin-top: 27rpx;"></view>
+    </view>
+  </view>
+  <DoctorList doctorList="{{doctorList}}"></DoctorList>
+</view>
+<view class="card" style="padding-bottom: 33rpx;background-image: url(https://super-doctor-1304015296.cos.ap-nanjing.myqcloud.com/2957274210059157504);background-size: cover;">
+  <text class="card-title">门诊信息</text>
+  <view style="display: flex;justify-content: space-between;margin:33rpx 38rpx 16rpx;">
+    <text class="text-style">时间</text>
+    <text class="text-style">就诊地点</text>
+    <text class="text-style">坐诊医生</text>
+  </view>
+  <view class="infoList">
+    <view class="infoList-item" wx:for="{{infoList}}" wx:key="id">
+      <view style="display: flex;align-items: center;height: 152rpx;">
+        <view class="infoBlock" style="width: 101rpx;">
+          <text class="infoText">{{item.week}}</text>
+          <text class="infoText" style="color: #bbbbbb;">（{{item.bucket}}）</text>
+        </view>
+        <view class="infoBlock" style="width: 411rpx;">
+          <text class="infoText">{{item.hospital}}</text>
+          <text class="infoText" style="color: #bbbbbb;">（{{item.haddress}}）</text>
+          <view style="display: flex;flex-wrap: nowrap;">
+            <text class="infoText">{{item.outpatientname}}</text>
+            <text class="infoText" style="color: #bbbbbb;">（{{item.oaddress}}）</text>
+          </view>
+        </view>
+        <view class="infoBlock" style="width: 116rpx;">
+          <text class="infoText" wx:for-items="{{item.doctorname}}" wx:for-item="Item">{{Item}}</text>
+        </view>
+      </view>
+      <view wx:if="{{infoList.length-index>1}}" style="width: 630rpx;height: 2rpx;border-bottom: solid 1rpx rgba(62, 145, 218, 0.26);margin: auto;"></view>
+    </view>
+  </view>
+</view>
+<view class="card" style="padding-bottom: 25rpx;background-image: url(https://super-doctor-1304015296.cos.ap-nanjing.myqcloud.com/2957274004768948224);background-size: cover;">
+  <view style="display: flex;justify-content: space-between;align-items: center;margin: 0 0 0 25rpx;">
+    <view style="display: flex;align-items: center;">
+      <text class="card-title" style="margin: 0%;">咨询案例</text>
+      <text style="font-size: 22rpx;font-weight: normal;color: #8e8e8e;margin-left: 7rpx;">（{{flowList[1].value}}人次）</text>
+    </view>
+    <button class="btn-caseList" style="width: 150rpx;height: 34rpx;" bindtap="caseList">
+      <text style="font-size: 25rpx;font-weight: normal;color: #8e8e8e;">查看更多 ></text>
+    </button>
+  </view>
+  <CaseList caseList="{{caseList}}" width="632" length="5"></CaseList>
+</view>
+<text class="card-title" style="margin-left: 45rpx;">科普知识</text>
+<view style="display: flex;flex-wrap: wrap;padding: 29rpx 13rpx 120rpx;">
+  <view wx:for="{{knowledgeList}}" wx:key="id" style="width: 335rpx;margin: 9rpx 13rpx;background-color: #ffffff;display: flex;flex-direction: column;padding-bottom: 45rpx;min-height: 1rpx;position: relative;" bindtap="webview">
+    <image src="{{item.knowledgePicture}}" style="width: inherit;height: 335rpx;max-height: 419rpx;min-height: 251rpx;"></image>
+    <text class="text-style" style="font-size: 27rpx;line-height: 43rpx;margin: 22rpx 15rpx 18rpx;">{{item.knowledgeTitle}}</text>
+    <text style="width: max-content;font-size: 22rpx;font-weight: normal;color: #bbbbbb;position: absolute;bottom: 22rpx;right: 22rpx;">{{item.visitNum}}次浏览</text>
+  </view>
+</view>
+<view class="tabbar">
+  <button style="width: 58rpx;height: 53rpx;padding: 0%;margin: 0 178rpx 0 0;" bindtap="share">
+    <image src="/images/share_icon.png" style="width: 58rpx;height: 53rpx;"></image>
+  </button>
+  <Authorization canIUseGetUserProfile="{{canIUseGetUserProfile}}" userInfo="{{userInfo}}">
+    <button class="btn-follow" style="width: 221rpx;height: 67rpx;" bindtap="followOperation">
+      <text wx:if="{{!hasFollowed}}" class="text-style" style="color: #ffffff;">关注</text>
+      <text wx:if="{{!hasFollowed}}" style="font-size: 18rpx;font-weight: normal;color: #ffffff;opacity: 0.7;">（添加为您的私人医生）</text>
+      <text wx:else class="text-style" style="color: #ffffff;">取消关注</text>
+    </button>
+    <button class="btn-addConsultation" style="width: 221rpx;height: 67rpx;">
+    <text class="text-style" style="color: #4fadff;" bindtap="addConsultation">在线咨询</text>
+  </button>
+  </Authorization>
+</view>
+<Actionsheet isCollapse="{{isCollapse}}" shareURL="{{shareURL}}" bind:share="sharePath"></Actionsheet>

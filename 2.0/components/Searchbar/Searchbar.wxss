@@ -1,0 +1,35 @@
+/* components/Searchbar/Searchbar.wxss */
+.searchbar{
+	height: 72rpx;
+	background-color: #ffffff;
+	border-radius: 25rpx;
+	border: solid 3rpx #4fadff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35rpx;
+}
+
+.placeholderStyle{
+	font-family: Alibaba PuHuiTi;
+	font-size: 29rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 35rpx;
+	letter-spacing: 0rpx;
+	color: #8e8e8e;
+}
+
+.btn-search{
+  background-color: transparent;
+  padding: 0%;
+}
+
+button{
+  display: flex;
+}
+
+button::after {
+  border: none;
+}

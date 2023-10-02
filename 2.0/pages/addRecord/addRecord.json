@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Authorization":"/components/Authorization/Authorization",
+    "van-calendar": "@vant/weapp/calendar/index"
+  },
+  "navigationBarTitleText": "上传病历资料"
+}

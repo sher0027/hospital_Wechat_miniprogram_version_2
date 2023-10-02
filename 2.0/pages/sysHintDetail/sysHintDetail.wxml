@@ -1,0 +1,9 @@
+<!--pages/sysHintDetail/sysHintDetail.wxml-->
+<wxs src="../../utils/slice.wxs" module="tools" />
+<view wx:for="{{SysHint}}" style="display: flex;flex-direction: column;align-items: center;padding: 20rpx;margin-bottom: 20rpx;">
+  <text decode="{{true}}" style="font-size: 21rpx;">{{tools.formatDate(item.sysTime)}}&emsp;&emsp;{{tools.subStr(item.sysTime,11,16)}}</text>
+  <view class="card">
+    <text>{{item.sysName}}</text>
+    <text style="font-size: 23rpx;color: #bbbbbb;margin-top: 15rpx;">{{item.sysInfo}}</text>
+  </view>
+</view>

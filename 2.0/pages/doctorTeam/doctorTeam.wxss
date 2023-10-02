@@ -1,0 +1,117 @@
+/* pages/doctorTeam/doctorTeam.wxss */
+page {
+  background: #f7f7f7;
+}
+
+.swiper {
+  width: 678rpx;
+  height: 226rpx;
+  border-radius: 33rpx;
+
+  position: relative;
+  margin: 36rpx;
+}
+
+.card {
+  width: 696rpx;
+  background-color: #eff7ff;
+  border-radius: 29rpx;
+  margin: 0 27rpx 40rpx;
+  padding-top: 31rpx;
+}
+
+.text-style {
+  font-size: 29rpx;
+  font-weight: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card-title {
+  font-size: 40rpx;
+  font-weight: normal;
+  margin-left: 25rpx;
+}
+
+.infoList {
+  width: 658rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 14rpx;
+  padding-bottom: rpx;
+}
+
+.infoList .infoBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.infoList .infoList-item{
+  width: inherit;
+  height: 154rpx;
+}
+
+.infoList .infoList-item .infoBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+
+.infoList .infoBlock .infoText{
+  font-size: 25rpx;
+  line-height: 33rpx;
+}
+
+.card .btn-caseList {
+  background-color: transparent;
+  padding: 0%;
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabbar {
+  width: 750rpx;
+  height: 103rpx;
+  background-color: #ffffff;
+  box-shadow: 0rpx 11rpx 45rpx 0rpx rgba(28, 86, 122, 0.3);
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+}
+
+.tabbar .btn-follow {
+  margin: 0%;
+  padding: 0%;
+  border-top-left-radius: 34rpx;
+  border-bottom-left-radius: 34rpx;
+  background-color: #4fadff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabbar .btn-addConsultation {
+  margin: 0%;
+  padding: 0%;
+  border-top-right-radius: 34rpx;
+  border-bottom-right-radius: 34rpx;
+  background-color: #d8edfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

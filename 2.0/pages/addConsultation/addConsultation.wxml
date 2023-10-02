@@ -1,0 +1,44 @@
+<!--pages/consult/consult.wxml-->
+
+<form bindsubmit="addConsultation">
+  <view style="display: flex;flex-direction: column;">
+    <view style="display: flex;">
+      <text class="consult-title">描述病情</text>
+      <text class="consult-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text>
+    </view>
+    <view class="consult-content" style="height: 326rpx;">
+      <textarea style="width: inherit;" name="patientDescription" placeholder="请详细描述疾病名称或者症状，患病时间，做过什么检查，用药情况，目前病情是加重还是缓解，想要获得医生什么帮助？\n描述越详细，医生回复质量越高。" value="{{patientDescription}}" placeholder-class="consult-detail" bindinput="texts" maxlength="200" auto-focus="true" disable-default-padding="true">
+    </textarea>
+      <view style="position: absolute;right: 63rpx;top: 388rpx;">
+        <text class="consult-hint">最少还要输入</text>
+        <text class="consult-highlight" wx:if="{{MaxNum-CurrentNum > 0}}">{{MaxNum-CurrentNum}}</text>
+        <text class="consult-highlight" style="color: #4fadff;" wx:else>0</text>
+        <text class="consult-hint">字</text>
+      </view>
+    </view>
+    <view style="display: flex;">
+      <text class="consult-title">关联病历</text>
+      <!-- <text class="consult-highlight" style="font-size: 36rpx;margin-left: 5rpx;">*</text> -->
+    </view>
+    <view class="consult-content" style="padding: 33rpx 19rpx;">
+      <text class="consult-detail" bindtap="importRecord">+ 添加相关病历记录</text>
+      <RecordList recordList="{{recordList}}" width="640"></RecordList>
+    </view>
+    <text class="consult-title">上传图片</text>
+    <view style="display: flex;height: 167rpx;margin: 30rpx 0;align-items: center;">
+      <view class="consult-content" style="width: 170rpx;height: 160rpx;padding: 0%;margin: 0rpx 30rpx;display: flex;flex-direction: column;align-items: center;flex-shrink: 0;" bindtap="upload">
+        <image src="/images/pic.png" style="width: 65rpx;height: 62rpx;margin: 36rpx 0 2rpx;"></image>
+        <text class="consult-detail" style="font-size: 22rpx;">+添加图片</text>
+      </view>
+      <text class="consult-detail">上传检查报告、患处照片、胶片等资料，内容仅医生可见。</text>
+    </view>
+    <view wx:for="{{ImgList}}" style="display: flex;justify-content: center;margin: 20rpx 0;">
+      <image src="{{item}}" style="width: 690rpx;border-radius: 29rpx;" data-index="{{index}}" bindtap="ImageDelete" mode="widthFix"></image>
+    </view>
+    <Authorization canIUseGetUserProfile="{{canIUseGetUserProfile}}" userInfo="{{userInfo}}">
+      <button class="btn-submit" style="width: 614rpx;height: 85rpx;" form-type="submit">
+        <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">开始咨询</text>
+      </button>
+    </Authorization>
+  </view>
+</form>

@@ -1,0 +1,8 @@
+<!--pages/sucRecord/sucRecord.wxml-->
+<view style="height: 100vh;display: flex;flex-direction: column;align-items: center;">
+  <text style="margin: 150rpx 0 50rpx;">您已完成上传</text>
+  <icon type="success" size="150"></icon>
+  <button class="btn-back" style="width: 614rpx;height: 85rpx;" bindtap="back"> 
+    <text style="font-size: 36rpx;font-weight: normal;color: #ffffff;">返回病历页</text>
+  </button>
+</view>

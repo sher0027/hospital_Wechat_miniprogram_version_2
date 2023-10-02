@@ -1,0 +1,15 @@
+<!--components/CaseList/CaseList.wxml-->
+<view wx:for="{{caseList}}" data-index="{{index}}" wx:key="id" class="case-item" bindtap="caseDetail" style="width: {{width}}rpx" wx:if="{{index<length}}">
+    <view style="display: flex;align-items: center;margin-bottom: 20rpx;">
+      <view class="case-icon" style="background-color: #4fadff;">
+        <text class="text-style" style="color: #ffffff;">患</text>
+      </view>
+      <text class="text-style" style="line-height: 45rpx;">{{item.orderPatientText}}</text>
+    </view>
+    <view style="display: flex;align-items: center;">
+      <view class="case-icon" style="background-color: #ebebeb;">
+        <text class="text-style" style="color: #3793fd;">医</text>
+      </view>
+      <text class="text-style" style="line-height: 45rpx;">{{item.orderDoctorText}}</text>
+    </view>
+  </view>

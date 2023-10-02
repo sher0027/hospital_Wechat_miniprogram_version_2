@@ -1,0 +1,35 @@
+<!--pages/consulate/consulate.wxml-->
+<view class="record">
+  <view class="record-head">
+    <text style="font-size: 36rpx;font-weight: normal;margin: 0 7rpx 0 29rpx;">病历记录</text>
+    <text style="font-size: 25rpx;font-weight: normal;color: #bbbbbb;">（{{recordList.length}}条）</text>
+    <button class="btn-upload" style="width: 221rpx;height: 51rpx;" bindtap="addRecord">
+      <text style="font-size: 25rpx;font-weight: normal;color: #4fadff;">+上传病历/资料</text>
+    </button>
+  </view>
+  <view class="record-search">
+    <view>
+      <view style="margin-right: 16rpx;display: flex;align-items: center;" bindtap="collapse">
+        <view style="position: relative;display: inline-block;">
+          <text style="font-size: 29rpx;font-weight: normal;color: #4fadff;margin-right: 9rpx;" wx:if="{{depart}}">{{departmentName}}</text>
+          <text style="font-size: 29rpx;font-weight: normal;color: #4fadff;margin-right: 9rpx;" wx:else>科室</text>
+        </view>
+        <view wx:if="{{!isCollapse}}" style="width: 0;height: 0;border-right: 10rpx solid transparent;border-left: 10rpx solid transparent;border-top: 10rpx solid #4fadff;"></view>
+        <view wx:else style="width: 0;height: 0;border-right: 10rpx solid transparent;border-left: 10rpx solid transparent;border-bottom: 10rpx solid #4fadff;"></view>
+      </view>
+      <view style="position: absolute;z-index: 10;">
+        <view wx:if="{{isCollapse}}" class="menu" bindtap="changeDepartment" data-index="-1">
+          <text style="font-size: 29rpx;font-weight: normal;color: #4fadff;">全部</text>
+        </view>
+        <view wx:if="{{isCollapse}}" wx:for="{{departmentList}}" wx:key="id" class="menu" bindtap="changeDepartment" data-index="{{index}}">
+          <text style="font-size: 29rpx;font-weight: normal;color: #4fadff;">{{item.departmentName}}</text>
+        </view>
+      </view>
+    </view>
+    <Searchbar width="480"></Searchbar>
+  </view>
+  <RecordList recordList="{{recordList}}" width="696" Deletable="true" did="{{depart}}"></RecordList>
+  <!-- <button class="btn-recordlist" style="width: 382rpx;height: 63rpx;" bindtap="recordList">
+    <text style="font-size: 33rpx;font-weight: normal;color: #ffffff;">查看全部记录</text>
+  </button> -->
+</view>

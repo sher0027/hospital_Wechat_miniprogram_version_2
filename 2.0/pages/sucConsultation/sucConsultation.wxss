@@ -1,0 +1,10 @@
+/* pages/sucConsulation/sucConsulation.wxss */
+.btn-back {
+  background-color: #4fadff;
+  border-radius: 33rpx;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 600rpx 0 30rpx;
+}
